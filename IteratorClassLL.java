@@ -198,6 +198,19 @@ public class IteratorClassLL {
     }
 
     /**
+     * Gets value at current location of iterator
+     * @return Value if successful, FAILED_ACCESS if list is empty
+     */
+    public int retrieveAtCurrent()
+    {
+        if( cursorRef == null )
+        {
+            return FAILED_ACCESS;
+        }
+        return cursorRef.value;
+    }
+
+    /**
      * Provides array data as a string, including indicatino of current
      * element, using recursive toStringHelper method
      * <p> Note: no spaces at beginning or end of string
