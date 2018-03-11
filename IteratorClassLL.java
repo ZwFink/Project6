@@ -153,6 +153,28 @@ public class IteratorClassLL {
     }
 
     /**
+     * Provides array data as a string, including indicatino of current
+     * element, using recursive toStringHelper method
+     * <p> Note: no spaces at beginning or end of string
+     * @return String result of reported array
+     */
+    public String toString()
+    {
+
+    }
+
+    /**
+     * Recursive helper method that creates string from data
+     * with cursor indicator at appropriate location and no space at end of the string
+     * @param workingRef NodeClass reference used for recursion
+     * @return String containing list of members as specified
+     */
+    private String toStringHelper( NodeClass workingRef )
+    {
+
+    }
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
