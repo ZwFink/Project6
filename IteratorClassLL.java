@@ -177,7 +177,7 @@ public class IteratorClassLL {
     {
        if( !isAtBeginning() )
        {
-           movePreviousHelper( cursorRef );
+           movePreviousHelper( headRef );
        }
     }
 
@@ -187,8 +187,7 @@ public class IteratorClassLL {
      */
     public void movePreviousHelper( NodeClass workingRef )
     {
-       if( workingRef.nextNode == cursorRef ||
-           workingRef.nextNode == null )
+       if( workingRef.nextNode == cursorRef )
        {
            cursorRef = workingRef;
        }
