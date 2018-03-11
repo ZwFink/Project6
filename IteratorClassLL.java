@@ -94,6 +94,14 @@ public class IteratorClassLL {
     }
 
     /**
+     * Sets iterator to the beginning of list
+     */
+    public void setToBeginning()
+    {
+       cursorRef = headRef;
+    }
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
