@@ -26,6 +26,17 @@ public class IteratorClassLL {
     /**
      * Default constructor
      */
+
+    /**
+     * Character value representing a space
+     */
+    private static final char SPACE = ' ';
+
+    /**
+     * Character value representing a bar
+     */
+    private static final char BAR = '|';
+
     public IteratorClassLL()
     {
         headRef = null;
@@ -160,7 +171,11 @@ public class IteratorClassLL {
      */
     public String toString()
     {
+        String returnString = "";
 
+        returnString = toStringHelper( headRef );
+
+        return returnString;
     }
 
     /**
@@ -171,7 +186,25 @@ public class IteratorClassLL {
      */
     private String toStringHelper( NodeClass workingRef )
     {
+        String returnString = "";
+        if( workingRef == cursorRef )
+        {
+           returnString += BAR;
+        }
 
+        returnString += workingRef.value;
+
+         if( workingRef == cursorRef )
+        {
+           returnString += BAR;
+        }
+
+        if( workingRef.nextNode != null )
+        {
+            returnString += SPACE + toStringHelper( workingRef.nextNode );
+        }
+
+        return returnString;
     }
 
     /**
