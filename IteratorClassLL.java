@@ -211,6 +211,31 @@ public class IteratorClassLL {
     }
 
     /**
+     * Removes and returns value from list at current iterator location
+     * <p> Note if cursor is not initially at beginning, sets cursor to previous node
+     * @return Value if successful, FAILED_ACCESS if list is empty
+     */
+    public int removeAtCurrent()
+    {
+       int returnInt = retrieveAtCurrent();
+
+       if( cursorRef == null )
+       {
+           return returnInt;
+       }
+       movePrevious();
+       if( isAtEnd() )
+       {
+           cursorRef.nextNode = null;
+       }
+       else
+       {
+           cursorRef.nextNode = cursorRef.nextNode.nextNode;
+       }
+       return returnInt;
+    }
+
+    /**
      * Provides array data as a string, including indicatino of current
      * element, using recursive toStringHelper method
      * <p> Note: no spaces at beginning or end of string
