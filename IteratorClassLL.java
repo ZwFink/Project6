@@ -54,6 +54,16 @@ public class IteratorClassLL {
        cursorRef = newNode;
     }
 
+    /**
+     * Move iterator to the next location if not currently at end
+     */
+    public void moveNext()
+    {
+       if( !( cursorRef.nextNode == null ) )
+       {
+           cursorRef = cursorRef.nextNode;
+       }
+    }
 
     /**
      * Node data structure for linked list
