@@ -102,6 +102,27 @@ public class IteratorClassLL {
     }
 
     /**
+     * Sets cursor to end of list using recursion
+     */
+    public void setToEnd()
+    {
+       setToEndHelper( cursorRef );
+    }
+
+    /**
+     * Sets cursor to end of list using recursion
+     * @param workingRef Current reference
+     */
+    private void setToEndHelper( NodeClass workingRef )
+    {
+       if( workingRef.nextNode != null )
+       {
+          setToEndHelper( workingRef.nextNode );
+       }
+       cursorRef = workingRef;
+    }
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
