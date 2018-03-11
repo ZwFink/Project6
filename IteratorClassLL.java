@@ -60,10 +60,19 @@ public class IteratorClassLL {
      */
     public void moveNext()
     {
-       if( !( cursorRef.nextNode == null ) )
+       if( !( isAtEnd() ) )
        {
            cursorRef = cursorRef.nextNode;
        }
+    }
+
+    /**
+     * Checks for iterator at beginning of list
+     * @return
+     */
+    public boolean isAtEnd()
+    {
+        return cursorRef.nextNode == null;
     }
 
     /**
