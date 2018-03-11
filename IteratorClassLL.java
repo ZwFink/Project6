@@ -10,6 +10,20 @@ public class IteratorClassLL {
 
 
     /**
+     * Iterator head reference
+     */
+    NodeClass headRef;
+
+    /**
+     * Iterator cursor reference
+     */
+    NodeClass cursorRef;
+
+    /**
+     * Provides constant -999999 for access failure messaging
+     */
+    public static final int FAILED_ACCESS = -999999;
+    /**
      * Default constructor
      */
     public IteratorClassLL()
@@ -33,7 +47,13 @@ public class IteratorClassLL {
     private class NodeClass
     {
 
+        /**
+         * Reference to the next node
+         */
        protected NodeClass nextNode;
+        /**
+         * Integer value held by the node
+         */
        private int value;
 
         /**
