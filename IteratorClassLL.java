@@ -68,11 +68,20 @@ public class IteratorClassLL {
 
     /**
      * Checks for iterator at beginning of list
-     * @return
+     * @return Boolean result of test
      */
     public boolean isAtEnd()
     {
         return cursorRef.nextNode == null;
+    }
+
+    /**
+     * Checks for iterator at beginning of list
+     * @return Boolean result of test
+     */
+    public boolean isAtBeginning()
+    {
+       return cursorRef == headRef;
     }
 
     /**
