@@ -85,6 +85,15 @@ public class IteratorClassLL {
     }
 
     /**
+     * Checks for empty list
+     * @return Boolean result of test
+     */
+    public boolean isEmpty()
+    {
+       return headRef == null;
+    }
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
