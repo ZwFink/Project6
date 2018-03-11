@@ -8,6 +8,7 @@ package p6_Package;
  */
 public class IteratorClassLL {
 
+
     /**
      * Default constructor
      */
@@ -24,5 +25,24 @@ public class IteratorClassLL {
     public IteratorClassLL( IteratorClassLL copied )
     {
 
+    }
+
+    /**
+     * Node data structure for linked list
+     */
+    private class NodeClass
+    {
+
+       protected NodeClass nextNode;
+       private int value;
+
+        /**
+         * Initialization constructor for NodeClass
+         * @param inVal data value for Node class object
+         */
+       private NodeClass( int inVal )
+       {
+          value = inVal;
+       }
     }
 }
