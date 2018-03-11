@@ -75,6 +75,32 @@ public class IteratorClassLL {
     }
 
     /**
+     * Inserts item prior to iterator location in list
+     * <p> Iterator reference points at inserted item after completion
+     * @param newVal Value to be inserted into list
+     */
+    public void insertPriorToIterator( int newVal )
+    {
+        if( !isAtBeginning() )
+        {
+            movePrevious();
+            insertAfterIterator( newVal );
+        }
+        else
+        {
+            NodeClass newNode = new NodeClass( newVal );
+            if( headRef != null )
+            {
+                newNode.nextNode = headRef;
+            }
+
+            headRef = newNode;
+            cursorRef = newNode;
+        }
+
+    }
+
+    /**
      * Move iterator to the next location if not currently at end
      */
     public void moveNext()
@@ -161,7 +187,8 @@ public class IteratorClassLL {
      */
     public void movePreviousHelper( NodeClass workingRef )
     {
-       if( workingRef.nextNode == cursorRef )
+       if( workingRef.nextNode == cursorRef ||
+           workingRef.nextNode == null )
        {
            cursorRef = workingRef;
        }
