@@ -115,11 +115,41 @@ public class IteratorClassLL {
      */
     private void setToEndHelper( NodeClass workingRef )
     {
-       if( workingRef.nextNode != null )
+       if( workingRef.nextNode == null )
        {
-          setToEndHelper( workingRef.nextNode );
+          cursorRef = workingRef;
        }
-       cursorRef = workingRef;
+       else
+       {
+           setToEndHelper( workingRef.nextNode );
+       }
+    }
+
+    /**
+     * Move iterator cursor to previous location if not currently at beginning
+     */
+    public void movePrevious()
+    {
+       if( !isAtBeginning() )
+       {
+           movePreviousHelper( cursorRef );
+       }
+    }
+
+    /**
+     * Helper method uses recursion to move iterator cursor to previous item
+     * @param workingRef
+     */
+    public void movePreviousHelper( NodeClass workingRef )
+    {
+       if( workingRef.nextNode == cursorRef )
+       {
+           cursorRef = workingRef;
+       }
+       else
+       {
+           movePreviousHelper( workingRef.nextNode );
+       }
     }
 
     /**
