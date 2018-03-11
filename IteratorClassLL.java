@@ -42,6 +42,19 @@ public class IteratorClassLL {
     }
 
     /**
+     * Inserts item after iterator location in list
+     * <p> Iterator reference points at inserted item after completion
+     * @param newVal Value to be inserted into list
+     */
+    public void insertAfterIterator( int newVal )
+    {
+       NodeClass newNode = new NodeClass( newVal );
+       cursorRef.nextNode = newNode;
+       cursorRef = newNode;
+    }
+
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
