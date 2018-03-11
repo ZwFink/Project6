@@ -28,7 +28,8 @@ public class IteratorClassLL {
      */
     public IteratorClassLL()
     {
-
+        headRef = null;
+        cursorRef = null;
     }
 
     /**
