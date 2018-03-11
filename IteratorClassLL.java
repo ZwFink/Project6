@@ -218,19 +218,36 @@ public class IteratorClassLL {
     public int removeAtCurrent()
     {
        int returnInt = retrieveAtCurrent();
+       boolean wasAtEnd = isAtEnd();
+       boolean wasAtBeginning = isAtBeginning();
 
        if( cursorRef == null )
        {
            return returnInt;
        }
        movePrevious();
-       if( isAtEnd() )
+
+       if( wasAtEnd )
        {
            cursorRef.nextNode = null;
        }
+       else if( wasAtBeginning )
+       {
+          if( headRef.nextNode == null )
+          {
+              headRef = null;
+              cursorRef = null;
+          }
+          else
+          {
+              cursorRef = cursorRef.nextNode;
+              headRef = headRef.nextNode;
+          }
+       }
        else
        {
-           cursorRef.nextNode = cursorRef.nextNode.nextNode;
+           NodeClass temp = cursorRef.nextNode.nextNode;
+           cursorRef.nextNode = temp;
        }
        return returnInt;
     }
