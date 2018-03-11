@@ -61,8 +61,16 @@ public class IteratorClassLL {
     public void insertAfterIterator( int newVal )
     {
        NodeClass newNode = new NodeClass( newVal );
-       newNode.nextNode = cursorRef.nextNode;
-       cursorRef.nextNode = newNode;
+       if( cursorRef != null )
+       {
+           newNode.nextNode = cursorRef.nextNode;
+           cursorRef.nextNode = newNode;
+       }
+       else
+       {
+           headRef = newNode;
+           cursorRef = newNode;
+       }
        cursorRef = newNode;
     }
 
@@ -171,11 +179,7 @@ public class IteratorClassLL {
      */
     public String toString()
     {
-        String returnString = "";
-
-        returnString = toStringHelper( headRef );
-
-        return returnString;
+        return toStringHelper( headRef );
     }
 
     /**
