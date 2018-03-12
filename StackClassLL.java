@@ -32,6 +32,16 @@ public class StackClassLL
     }
 
     /**
+     * Removes a value from the top of the stack
+     * @return Integer value from the top of the stack
+     */
+    public int pop()
+    {
+       stackData.setToEnd();
+       return stackData.removeAtCurrent();
+    }
+
+    /**
      * Provides array data as a string
      * @return string representation of object
      */
