@@ -30,4 +30,13 @@ public class StackClassLL
        stackData.setToEnd();
        stackData.insertAfterIterator( value );
     }
+
+    /**
+     * Provides array data as a string
+     * @return string representation of object
+     */
+    public String toString()
+    {
+        return stackData.toString();
+    }
 }
