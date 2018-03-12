@@ -291,6 +291,16 @@ public class IteratorClassLL {
     }
 
     /**
+     * Clears iterator list
+     */
+    public void clear()
+    {
+        // TODO make sure this is correct
+        headRef = null;
+        cursorRef = null;
+    }
+
+    /**
      * Node data structure for linked list
      */
     private class NodeClass
