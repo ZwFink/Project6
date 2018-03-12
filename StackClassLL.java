@@ -7,16 +7,27 @@ package p6_Package;
 public class StackClassLL
 {
 
+    protected IteratorClassLL stackData;
     /**
      * Default constructor
      */
     public StackClassLL()
     {
-
+        stackData = new IteratorClassLL();
     }
 
     public StackClassLL( StackClassLL copied )
     {
 
+    }
+
+    /**
+     * Places a value on the stack
+     * @param value Integer value to be placed on stack
+     */
+    public void push( int value )
+    {
+       stackData.setToEnd();
+       stackData.insertAfterIterator( value );
     }
 }
