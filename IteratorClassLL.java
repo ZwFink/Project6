@@ -247,8 +247,8 @@ public class IteratorClassLL {
           }
           else
           {
-              cursorRef = cursorRef.nextNode;
-              headRef = headRef.nextNode;
+              movePrevious();
+              cursorRef.nextNode = null;
           }
        }
        else
