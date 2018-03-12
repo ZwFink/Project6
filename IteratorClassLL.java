@@ -50,7 +50,16 @@ public class IteratorClassLL {
      */
     public IteratorClassLL( IteratorClassLL copied )
     {
+        // go through all the other's nodes
+        cursorRef = copied.cursorRef;
+        headRef = copied.headRef;
 
+           NodeClass newNode = new NodeClass(
+                                    copied.headRef.value );
+        while( newNode.nextNode != null )
+        {
+           // TODO finish this method
+        }
     }
 
     /**
@@ -160,7 +169,8 @@ public class IteratorClassLL {
      */
     private void setToEndHelper( NodeClass workingRef )
     {
-       if( workingRef.nextNode == null )
+       if( workingRef == null ||
+           workingRef.nextNode == null )
        {
           cursorRef = workingRef;
        }
