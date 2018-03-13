@@ -248,7 +248,8 @@ public class IteratorClassLL {
 
        if( isAtBeginning() )
        {
-           cursorRef.nextNode = null;
+           headRef = null;
+           cursorRef = null;
        }
        else if( isAtEnd() )
        {
@@ -292,6 +293,12 @@ public class IteratorClassLL {
     private String toStringHelper( NodeClass workingRef )
     {
         String returnString = "";
+
+        if( workingRef == null )
+        {
+            return returnString;
+        }
+
         if( workingRef == cursorRef )
         {
            returnString += BAR;
