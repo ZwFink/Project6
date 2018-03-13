@@ -6,9 +6,18 @@ public class IteratorClassLLMain
     {
         IteratorClassLL ll = new IteratorClassLL();
 
-        ll.insertAfterIterator( 4 );
-        ll.insertAfterIterator( 5 );
-        ll.insertAfterIterator( 6 );
-        ll.insertAfterIterator( 7 );
+        for( int index = 0; index < 25; index++)
+        {
+            ll.insertAfterIterator( index + 1 );
+        }
+
+        ll.movePrevious();
+        ll.movePrevious();
+        ll.removeAtCurrent();
+        ll.moveNext();
+        ll.removeAtCurrent();
+        System.out.println(ll);
+        IteratorClassLL ll2 = new IteratorClassLL( ll );
+        System.out.println(ll2);
     }
 }
