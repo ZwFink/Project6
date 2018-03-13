@@ -16,9 +16,13 @@ public class StackClassLL
         stackData = new IteratorClassLL();
     }
 
+    /**
+     * Copies a StackClass object
+     * @param copied StackClass object to be copied
+     */
     public StackClassLL( StackClassLL copied )
     {
-
+        stackData = new IteratorClassLL( copied.stackData );
     }
 
     /**
@@ -39,6 +43,16 @@ public class StackClassLL
     {
        stackData.setToEnd();
        return stackData.removeAtCurrent();
+    }
+
+    /**
+     * Views the value on top of the stack
+     * @return Integer value found on top of the stack
+     */
+    public int peekTop()
+    {
+       stackData.setToEnd();
+       return stackData.retrieveAtCurrent();
     }
 
     /**
