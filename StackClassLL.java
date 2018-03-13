@@ -56,6 +56,14 @@ public class StackClassLL
     }
 
     /**
+     * Clears stack data
+     */
+    public void clear()
+    {
+        stackData.clear();
+    }
+
+    /**
      * Provides array data as a string
      * @return string representation of object
      */
