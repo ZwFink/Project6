@@ -56,7 +56,7 @@ public class IteratorClassLL {
         NodeClass localNodeTemp;
 
         headRef = localNode;
-        
+
         while( copiedNodeTemp.nextNode != null )
         {
             if( copiedNodeTemp == copied.cursorRef )
@@ -66,6 +66,7 @@ public class IteratorClassLL {
 
             copiedNodeTemp = copiedNodeTemp.nextNode;
             localNodeTemp = new NodeClass( copiedNodeTemp.value );
+
             localNode.nextNode = localNodeTemp;
             localNode = localNodeTemp;
         }
@@ -174,6 +175,7 @@ public class IteratorClassLL {
 
     /**
      * Sets cursor to end of list using recursion
+     * <p> Precondition: Cursor reference is not at head
      * @param workingRef Current reference
      */
     private void setToEndHelper( NodeClass workingRef )
@@ -202,6 +204,7 @@ public class IteratorClassLL {
 
     /**
      * Helper method uses recursion to move iterator cursor to previous item
+     * <p> Precondition: Cursor reference is not at beginning
      * @param workingRef
      */
     public void movePreviousHelper( NodeClass workingRef )
