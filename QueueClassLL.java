@@ -28,4 +28,14 @@ public class QueueClassLL
    {
        queueData = new IteratorClassLL( copied.queueData );
    }
+
+    /**
+     * Dequeues data from queue
+     * @return Integer value to be removed from queue
+     */
+   public int dequeue()
+   {
+      queueData.setToEnd();
+      return queueData.removeAtCurrent();
+   }
 }
