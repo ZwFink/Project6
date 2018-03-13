@@ -54,7 +54,8 @@ public class QueueClassLL
      */
    public int peekFront()
    {
-       return queueData.retrieveAtCurrent()
+       queueData.setToEnd();
+       return queueData.retrieveAtCurrent();
    }
 
     /**
