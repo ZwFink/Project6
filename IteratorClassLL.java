@@ -2,6 +2,7 @@
 package p6_Package;
 
 
+
 /**
  * Class provides data storage with iterator managemeng.
  * @author Zane Fink
@@ -50,15 +51,23 @@ public class IteratorClassLL {
      */
     public IteratorClassLL( IteratorClassLL copied )
     {
-        // go through all the other's nodes
-        cursorRef = copied.cursorRef;
-        headRef = copied.headRef;
+        NodeClass copiedNodeTemp = copied.headRef;
+        NodeClass localNode = new NodeClass( copiedNodeTemp.value );
+        NodeClass localNodeTemp;
 
-           NodeClass newNode = new NodeClass(
-                                    copied.headRef.value );
-        while( newNode.nextNode != null )
+        headRef = localNode;
+        
+        while( copiedNodeTemp.nextNode != null )
         {
-           // TODO finish this method
+            if( copiedNodeTemp == copied.cursorRef )
+            {
+                cursorRef = localNode;
+            }
+
+            copiedNodeTemp = copiedNodeTemp.nextNode;
+            localNodeTemp = new NodeClass( copiedNodeTemp.value );
+            localNode.nextNode = localNodeTemp;
+            localNode = localNodeTemp;
         }
     }
 
@@ -305,7 +314,6 @@ public class IteratorClassLL {
      */
     public void clear()
     {
-        // TODO make sure this is correct
         headRef = null;
         cursorRef = null;
     }
@@ -332,6 +340,7 @@ public class IteratorClassLL {
        private NodeClass( int inVal )
        {
           value = inVal;
+          nextNode = null;
        }
     }
 }
