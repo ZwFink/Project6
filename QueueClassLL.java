@@ -56,4 +56,21 @@ public class QueueClassLL
    {
        return queueData.retrieveAtCurrent()
    }
+
+    /**
+     * Clears queue data
+     */
+   public void clear()
+   {
+       queueData.clear();
+   }
+
+    /**
+     * Provides array data as string
+     * @return String representation of queue object
+     */
+   public String toString()
+   {
+       return queueData.toString();
+   }
 }
