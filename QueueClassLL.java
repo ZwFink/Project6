@@ -30,6 +30,15 @@ public class QueueClassLL
    }
 
     /**
+     * Enqueues data to queue
+     * @param value integer data to be enqueued
+     */
+   public void enqueue( int value )
+   {
+      queueData.setToBeginning();
+      queueData.insertPriorToIterator( value );
+   }
+    /**
      * Dequeues data from queue
      * @return Integer value to be removed from queue
      */
