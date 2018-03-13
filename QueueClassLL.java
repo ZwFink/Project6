@@ -47,4 +47,13 @@ public class QueueClassLL
       queueData.setToEnd();
       return queueData.removeAtCurrent();
    }
+
+    /**
+     * Views data at front of queue
+     * @return Integer value found at front of queue
+     */
+   public int peekFront()
+   {
+       return queueData.retrieveAtCurrent()
+   }
 }
