@@ -13,5 +13,7 @@ public class StackClassLLMain
         System.out.println( stack.toString() );
         stack.pop();
         System.out.println( stack.toString() );
+        StackClassLL stack2 = new StackClassLL( stack );
+        System.out.println( stack.toString() );
     }
 }
